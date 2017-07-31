@@ -41,8 +41,19 @@ const config = {
 		}]
 	}],
 	pair: {
-		viewOrder: ['generic_done'],
+		viewOrder: ['generic_check_device', 'generic_done'],
 		views: [{
+			template: '../lib/pair/check_device.html',
+			options: {
+				title: 'views.generic_done.title',
+				device_exists_message: 'views.generic_check_device.device_exists_message',
+				prepend: '',
+				append: ''
+			},
+			prepend: [],
+			append: [],
+			id: 'generic_check_device'
+		}, {
 			template: '../lib/pair/done.html',
 			options: {
 				title: 'views.generic_done.title',
@@ -92,7 +103,8 @@ const config = {
 			'REVERSE',
 			'STOP',
 			'TELETEXT'
-		]
+		],
+		parseCmd: undefined
 	}
 };
 const Driver = require(config.driver);

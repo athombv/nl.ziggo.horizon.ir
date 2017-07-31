@@ -39,6 +39,9 @@
 	"views": {
 		"generic_done": {
 			"title": "Adding device!\u0000"
+		},
+		"generic_check_device": {
+			"device_exists_message": "Device already exists. Please close the pairing wizard.\u0000"
 		}
 	},
 	"horizon_settopbox": "Horizon SetTopBox"
