@@ -1,0 +1,45 @@
+{
+	"ir_generator": {
+		"flow": {
+			"send_cmd": "Send Command\u0000",
+			"send_cmd_number": "Set Channel\u0000",
+			"cmd_received": "Button is Pressed\u0000"
+		},
+		"button_labels": {
+			"CHANNEL_DOWN": "Channel Down\u0000",
+			"CHANNEL_UP": "Channel Up\u0000",
+			"CURSOR_DOWN": "Down\u0000",
+			"CURSOR_ENTER": "D-Pad Enter\u0000",
+			"CURSOR_LEFT": "Left\u0000",
+			"CURSOR_RIGHT": "Right\u0000",
+			"CURSOR_UP": "Up\u0000",
+			"DIGIT_0": "0\u0000",
+			"DIGIT_1": "1\u0000",
+			"DIGIT_2": "2\u0000",
+			"DIGIT_3": "3\u0000",
+			"DIGIT_4": "4\u0000",
+			"DIGIT_5": "5\u0000",
+			"DIGIT_6": "6\u0000",
+			"DIGIT_7": "7\u0000",
+			"DIGIT_8": "8\u0000",
+			"DIGIT_9": "9\u0000",
+			"EXIT": "Exit\u0000",
+			"FORWARD": "Forward\u0000",
+			"MENU_MAIN": "Main Menu\u0000",
+			"PAUSE": "Pause\u0000",
+			"PLAY": "Play\u0000",
+			"POWER_TOGGLE": "On/Off\u0000",
+			"PREVIOUS_CHANNEL": "Previous Channel\u0000",
+			"RECORD": "Record\u0000",
+			"REVERSE": "Rewind\u0000",
+			"STOP": "Stop\u0000",
+			"TELETEXT": "Teletext\u0000"
+		}
+	},
+	"views": {
+		"generic_done": {
+			"title": "Adding device!\u0000"
+		}
+	},
+	"horizon_settopbox": "Horizon SetTopBox"
+}
