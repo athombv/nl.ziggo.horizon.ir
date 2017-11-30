@@ -22,7 +22,7 @@ const config = {
 			signal: {
 				id: 'horizon_settopbox',
 				type: 'prontohex',
-				repetitions: 5,
+				repetitions: 1,
 				options: {
 					cmdNumberPrefix: 'DIGIT_',
 					minTxInterval: 250,
