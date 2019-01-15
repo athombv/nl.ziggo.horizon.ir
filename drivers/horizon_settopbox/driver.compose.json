@@ -1,0 +1,58 @@
+{
+	"$extends": [
+		"rf.ir_remote"
+	],
+	"name": {
+		"en": "Horizon SetTopBox",
+		"nl": "Horizon SetTopBox"
+	},
+	"class": "tv",
+	"icon": "{{driverPath}}/assets/remote.svg",
+	"images": {
+		"small": "{{driverPath}}/assets/images/small.jpg",
+		"large": "{{driverPath}}/assets/images/large.jpg"
+	},
+	"capabilities": ["onoff", "channel_up", "channel_down"],
+	"rf": {
+		"signal": "horizon_settopbox",
+		"minTxInterval": 250,
+		"cmdNumberPrefix": "DIGIT_",
+		"capabilityToCommandMap": {
+			"onoff": "POWER_TOGGLE",
+			"channel_up": "CHANNEL_UP",
+			"channel_down": "CHANNEL_DOWN"
+		}
+	},
+	"$flow": {
+		"actions": [
+			{
+				"id": "{{driverId}}:send_cmd",
+				"title": {
+					"en": "Send Command",
+					"nl": "Verzend Commando"
+				},
+				"args": [
+					{
+						"name": "cmd",
+						"type": "autocomplete"
+					}
+				]
+			},
+			{
+				"id": "{{driverId}}:send_cmd_number",
+				"title": {
+					"en": "Set Channel",
+					"nl": "Zet op Kanaal"
+				},
+				"args": [
+					{
+						"name": "number",
+						"type": "number",
+						"min": 0,
+						"max": 9999
+					}
+				]
+			}
+		]
+	}
+}

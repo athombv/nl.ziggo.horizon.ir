@@ -1,7 +1,13 @@
 'use strict';
 
-function init() {
+const Homey = require('homey');
+
+class Horizon extends Homey.App {
+
+	onInit() {
+		this.log('Horizon is running...');
+	}
 
 }
 
-module.exports.init = init;
+module.exports = Horizon;

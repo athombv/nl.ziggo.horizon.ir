@@ -19,9 +19,84 @@
   "permissions": [
     "homey:wireless:ir"
   ],
+  "flow": {
+    "actions": [
+      {
+        "id": "horizon_settopbox:send_cmd",
+        "title": {
+          "en": "Send Command",
+          "nl": "Verzend Commando"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=horizon_settopbox"
+          },
+          {
+            "name": "cmd",
+            "type": "autocomplete"
+          }
+        ]
+      },
+      {
+        "id": "horizon_settopbox:send_cmd_number",
+        "title": {
+          "en": "Set Channel",
+          "nl": "Zet op Kanaal"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=horizon_settopbox"
+          },
+          {
+            "name": "number",
+            "type": "number",
+            "min": 0,
+            "max": 9999
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "class": "tv",
+      "capabilities": [
+        "onoff",
+        "channel_up",
+        "channel_down"
+      ],
+      "pair": [
+        {
+          "id": "rf.done"
+        }
+      ],
+      "name": {
+        "en": "Horizon SetTopBox",
+        "nl": "Horizon SetTopBox"
+      },
+      "icon": "/drivers/horizon_settopbox/assets/remote.svg",
+      "images": {
+        "small": "/drivers/horizon_settopbox/assets/images/small.jpg",
+        "large": "/drivers/horizon_settopbox/assets/images/large.jpg"
+      },
+      "rf": {
+        "signal": "horizon_settopbox",
+        "minTxInterval": 250,
+        "cmdNumberPrefix": "DIGIT_",
+        "capabilityToCommandMap": {
+          "onoff": "POWER_TOGGLE",
+          "channel_up": "CHANNEL_UP",
+          "channel_down": "CHANNEL_DOWN"
+        }
+      },
+      "id": "horizon_settopbox"
+    }
+  ],
   "signals": {
-    "433": {},
-    "868": {},
     "ir": {
       "horizon_settopbox": {
         "type": "prontohex",
@@ -62,78 +137,5 @@
         }
       }
     }
-  },
-  "drivers": [
-    {
-      "id": "horizon_settopbox",
-      "name": {
-        "en": "Horizon SetTopBox",
-        "nl": "Horizon SetTopBox"
-      },
-      "class": "tv",
-      "capabilities": [
-        "onoff",
-        "channel_up",
-        "channel_down"
-      ],
-      "images": {
-        "small": "./ir_generator/assets/images/small.jpg",
-        "large": "./ir_generator/assets/images/large.jpg"
-      },
-      "pair": [
-        {
-          "id": "generic_check_device",
-          "navigation": {}
-        },
-        {
-          "id": "generic_done",
-          "navigation": {}
-        }
-      ]
-    }
-  ],
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": [
-      {
-        "id": "horizon_settopbox:send_cmd",
-        "title": {
-          "en": "Send Command\u0000",
-          "nl": "Verzend Commando\u0000"
-        },
-        "args": [
-          {
-            "name": "cmd",
-            "type": "autocomplete"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=horizon_settopbox"
-          }
-        ]
-      },
-      {
-        "id": "horizon_settopbox:send_cmd_number",
-        "title": {
-          "en": "Set Channel\u0000",
-          "nl": "Zet op Kanaal\u0000"
-        },
-        "args": [
-          {
-            "name": "number",
-            "type": "number",
-            "min": "0",
-            "max": "9999"
-          },
-          {
-            "name": "device",
-            "type": "device",
-            "filter": "driver_id=horizon_settopbox"
-          }
-        ]
-      }
-    ]
   }
 }
